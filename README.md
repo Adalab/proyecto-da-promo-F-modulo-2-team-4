@@ -14,4 +14,4 @@ encabezados_y_calendario:
         1) calendario del proyecto para presentación WHATFLIX
         2) encabezados tablas .csv para MySQL.
               
-ficheros .csv pendiente de unificar lista_tupla_actores
+*** ficheros lista_tupla_actores.csv pendiente de unificar
