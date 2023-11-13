@@ -2,7 +2,7 @@ FASE I: proyecto2_chicas10_fase_1.ipynb ==> FaseI_datos_API_final.csv
 
 FASE II: proyecto2_chicas10_fase_2.ipynb ==> 
       
-FASE III: proyecto2_chicas10_fase_3.ipynb ==> Pelicula_Actr.csv lista_actores_unicos.csv para iterar
+FASE III: proyecto2_chicas10_fase_3.ipynb ==> Pelicula_Actr.csv (también hay lista_actores_unicos.csv para iterar)
 
 FASE IV: proyecto2_chicas10_fase_4_oscars_bsoup.ipynb ==> pelis_oscars.csv
 
