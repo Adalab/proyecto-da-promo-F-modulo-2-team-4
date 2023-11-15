@@ -70,10 +70,4 @@ CREATE TABLE `oscars` (
   `mejor_director` VARCHAR(100),
   `mejor_actor` VARCHAR(100),
   `mejor_actriz` VARCHAR(100),
-  PRIMARY KEY (`mejor_pelicula`),
-  CONSTRAINT `fk_oscars`
-    FOREIGN KEY (`mejor_actor`, `mejor_actriz`)
-    REFERENCES `detalles_artistas`(`artista`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-);
+  PRIMARY KEY (`mejor_pelicula`));
