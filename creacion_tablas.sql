@@ -8,12 +8,12 @@ CREATE TABLE `peliculas` (
   `mes` INT(2),
   `id` VARCHAR(12),
   `genero` VARCHAR(10),
-  PRIMARY KEY (`id`, `titulo`)
+  PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `detalles_peliculas` (
   `titulo` VARCHAR(120),
-  `calificacion_imdb` VARCHAR(10),
+  `calificacion_imdb` FLOAT(10),
   `director` VARCHAR(100),
   `guionista` VARCHAR(100),
   `argumento` VARCHAR(2000),
@@ -21,20 +21,20 @@ CREATE TABLE `detalles_peliculas` (
   `id` VARCHAR(12),
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_detalles_peliculas`
-    FOREIGN KEY (`id`, `titulo`)
-    REFERENCES `peliculas`(`id`, `titulo`)
+    FOREIGN KEY (`id`)
+    REFERENCES `peliculas`(`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
 
 CREATE TABLE `tomatometro` (
   `titulo` VARCHAR(120),
-  `tomatometro` VARCHAR(10),
+  `tomatometro` VARCHAR(50),
   `id` VARCHAR(12),
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_tomatometro`
-    FOREIGN KEY (`id`, `titulo`)
-    REFERENCES `peliculas`(`id`, `titulo`)
+    FOREIGN KEY (`id`)
+    REFERENCES `peliculas`(`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
@@ -71,3 +71,6 @@ CREATE TABLE `oscars` (
   `mejor_actor` VARCHAR(100),
   `mejor_actriz` VARCHAR(100),
   PRIMARY KEY (`mejor_pelicula`));
+  
+
+
