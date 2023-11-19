@@ -75,6 +75,73 @@ WITH DirectoresMultiplePeliculas AS (
 SELECT director, cantidad_peliculas
 FROM DirectoresMultiplePeliculas
 ORDER BY cantidad_peliculas DESC
-LIMIT 1;
+LIMIT 50;
+
+
+-- BRAIMSTORMING PATRICIA
+-- Tarde de siesta: películas con mejor nota:
+SELECT `id`, `titulo`, `calificacion_imdb`
+	FROM `detalles_peliculas`
+    WHERE `calificacion_imdb` != 'desconocido' 
+	ORDER BY `calificacion_imdb` DESC
+    LIMIT 225;
+
+-- Maratón con amigos: películas con peor nota
+SELECT `id`, `titulo`, `calificacion_imdb`
+	FROM `detalles_peliculas`
+    WHERE `calificacion_imdb` != 'desconocido' 
+	ORDER BY `calificacion_imdb` ASC
+    LIMIT 100;
+
+-- Halloween de terror: Películas de terror con peor nota
+SELECT `d`.`id`, `d`.`titulo`, `d`.`calificacion_imdb`, `p`.`genero`
+	FROM `detalles_peliculas` AS `d`
+    INNER JOIN `peliculas` AS `p`
+    ON `d`.`id` = `p`.`id`
+	WHERE `p`.`genero` = 'Horror' 
+	ORDER BY `calificacion_imdb` ASC
+	LIMIT 50;
+
+-- RECOMENDACIONES:
+-- Directores que más aparecen (query hecha)
+-- Guionistas que más aparecen:
+SELECT `guionista`, COUNT(`id`) AS `numero_peliculas`
+	FROM `detalles_peliculas`
+	GROUP BY `guionista`
+	ORDER BY COUNT(`id`) DESC;
+
+-- Actores y actrices que más aparecen:
+SELECT `artista`, COUNT(`id`) AS `numero_peliculas`
+	FROM `pelicula_artista`
+	GROUP BY `artista`
+	ORDER BY COUNT(`id`) DESC;
+    
+-- Géneros con mejor nota (para añadir a Tarde de siesta):
+SELECT p.genero, COUNT(p.id) AS total_peor_nota
+FROM peliculas p
+INNER JOIN (
+    SELECT d.id
+    FROM detalles_peliculas d
+    WHERE d.calificacion_imdb != 'desconocido'
+    ORDER BY d.calificacion_imdb ASC
+    LIMIT 300
+) AS sub
+ON p.id = sub.id
+GROUP BY p.genero
+ORDER BY total_peor_nota DESC;
+
+-- Géneros con peor nota (para añadir a Maratón con amigos):
+SELECT p.genero, COUNT(p.id) AS total_peor_nota
+FROM peliculas p
+INNER JOIN (
+    SELECT d.id
+    FROM detalles_peliculas d
+    WHERE d.calificacion_imdb != 'desconocido'
+    ORDER BY d.calificacion_imdb ASC
+    LIMIT 300
+) AS sub
+ON p.id = sub.id
+GROUP BY p.genero
+ORDER BY total_peor_nota ASC;
 
 
