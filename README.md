@@ -2,6 +2,7 @@ FASE I: proyecto2_chicas10_fase_1.ipynb ==> peliculas.csv (anterior "FaseI_datos
 
 FASE II: proyecto2_chicas10_fase_2.ipynb ==> detalle_peliculas.csv
                                               tomatometro.csv
+
 FASE III: proyecto2_chicas10_fase_3.ipynb ==> peliculas_artista (anterior Pelicula_Actr.csv, tb borrada la lista_actores_unicos.csv sobre la que iteramos iterar)
                                               detalles_artista.csv
 
