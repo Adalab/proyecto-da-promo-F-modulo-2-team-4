@@ -5,12 +5,12 @@ FASE I:
 FASE II:
 
     proyecto2_chicas10_fase_2.ipynb ==> detalle_peliculas.csv                                   
-    tomatometro.csv
+                                        tomatometro.csv
 
 FASE III: 
                                              
     proyecto2_chicas10_fase_3.ipynb ==> peliculas_artista (anterior Pelicula_Actr.csv, tb borrada la lista_actores_unicos.csv sobre la que iteramos iterar)
-    detalles_artista.csv
+                                        detalles_artista.csv
 
 FASE IV:
 
@@ -29,7 +29,7 @@ FASE VII:
 
     CONSULTAS.sql
 
-WHATFLIX.pptm:
+WHATFLIX_demo.pptm:
 
       Presentación para DEMO
       calendatio.xls
