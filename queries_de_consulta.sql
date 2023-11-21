@@ -126,4 +126,3 @@ WHERE `dp.calificacion_imdb` = (
 );
 
 
-
